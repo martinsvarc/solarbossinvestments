@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Presentation</title>
+    <meta name="description" content="Embedded Google Slides presentation">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        background: #000; /* subtle backdrop while loading */
+      }
+
+      /* Full-bleed responsive iframe */
+      .slides-embed {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh; /* modern viewport unit for mobile address bars */
+        border: 0;
+      }
+
+      /* Non-interactive hint overlay above the slides */
+      .legend-hint {
+        position: fixed;
+        left: 50%;
+        bottom: 12px;
+        transform: translateX(-50%);
+        color: #fff;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 8px 12px;
+        border-radius: 8px;
+        font: 14px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.3;
+        text-align: center;
+        pointer-events: none; /* allow clicks to pass through to the slides */
+        z-index: 1;
+        backdrop-filter: saturate(1.1) blur(2px);
+      }
+
+      /* Ensure no scrollbars unless absolutely necessary */
+      body {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe
+      class="slides-embed"
+      src="https://docs.google.com/presentation/d/101sPwJAowtBvz9yG2f-Y4eaSwlOxGLqU/embed?start=false&loop=false&rm=minimal"
+      allowfullscreen
+      loading="lazy"
+      title="Embedded Presentation"
+    ></iframe>
+
+    <div class="legend-hint" role="note" aria-live="polite">
+      Click anywhere or press "Space" to see the next slide. Use arrow keys to navigate.
+    </div>
+
+    <noscript>
+      <div style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;background:#000;font:16px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;">
+        Please enable JavaScript to view the embedded presentation. 
+        <a style="color:#61dafb;margin-left:8px;" href="https://docs.google.com/presentation/d/101sPwJAowtBvz9yG2f-Y4eaSwlOxGLqU/edit?usp=sharing&ouid=117336544580466601718&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Open on Google Slides</a>.
+      </div>
+    </noscript>
+  </body>
+  </html>
+
+
